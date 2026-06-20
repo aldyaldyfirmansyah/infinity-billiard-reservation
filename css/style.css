@@ -1779,9 +1779,148 @@ footer .credit a {
   }
 }
 
-/* Mobile */
-@media (max-width: 450px) {
+/* HP (Handphone) */
+@media (max-width: 480px) {
   html {
     font-size: 55%;
+  }
+
+  .navbar {
+    padding: 0.8rem 4%;
+  }
+
+  .navbar .navbar-logo {
+    font-size: 1.4rem;
+  }
+
+  .navbar .navbar-nav a {
+    font-size: 1.6rem;
+    margin: 1rem;
+  }
+
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero .content h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero .content p {
+    font-size: 1rem;
+  }
+
+  .hero .content .cta {
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+  }
+
+  .table-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .table-card {
+    min-height: 100px;
+    padding: 10px 6px;
+  }
+
+  .meja-icon {
+    font-size: 20px;
+  }
+
+  .meja-nama {
+    font-size: 11px;
+  }
+
+  .status-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  .meja-harga {
+    font-size: 9px;
+  }
+
+  .contact .row .map {
+    height: 200px;
+  }
+
+  .contact .row form .input-group {
+    padding-left: 1rem;
+  }
+
+  .contact .row form .input-group input {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .contact .row form .btn {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .stat-box {
+    padding: 12px;
+  }
+
+  .stat-box .number {
+    font-size: 1.6rem;
+  }
+
+  .stat-box .label {
+    font-size: 0.7rem;
+  }
+
+  .modal-content,
+  .login-content,
+  .register-content {
+    padding: 1.2rem;
+    margin: 0.5rem;
+    width: 95%;
+  }
+
+  .modal-content h2,
+  .login-content h2,
+  .register-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .btn-booking-submit,
+  .btn-login,
+  .btn-register {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  footer .links a {
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* HP Sangat Kecil */
+@media (max-width: 360px) {
+  .hero .content h1 {
+    font-size: 2.2rem;
+  }
+
+  .table-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+
+  .table-card {
+    min-height: 80px;
+    padding: 6px 4px;
+  }
+
+  .meja-nama {
+    font-size: 10px;
   }
 }
