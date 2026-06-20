@@ -2,15 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Infinity Billiard Reservation</title>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap” rel="
-      stylesheet”
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
     />
 
     <!-- Feather Icons -->
@@ -20,474 +23,506 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <!-- ======================================== -->
-<!-- MODAL BOOKING MEJA                        -->
-<!-- ======================================== -->
-<div class="modal-booking" id="modalBooking">
-  <div class="modal-content">
-    <button class="close-modal" id="closeModal">&times;</button>
-
-    <h2>📋 Booking Meja</h2>
-    <p class="subtitle">Pilih meja dan isi data untuk memesan</p>
-
-    <form class="booking-form" id="bookingForm">
-      <!-- Pilih Meja -->
-      <div class="form-group">
-        <label for="pilihMeja">Pilih Meja</label>
-        <select id="pilihMeja" required>
-          <option value="">-- Pilih Meja --</option>
-          <option value="1">Meja 1 - Rp 30.000/jam</option>
-          <option value="2">Meja 2 - Rp 30.000/jam</option>
-          <option value="3">Meja 3 - Rp 30.000/jam</option>
-          <option value="4">Meja 4 - Rp 35.000/jam</option>
-          <option value="5">Meja 5 - Rp 35.000/jam</option>
-        </select>
-      </div>
-
-      <!-- Nama -->
-      <div class="form-group">
-        <label for="namaPemesan">Nama Lengkap</label>
-        <input
-          type="text"
-          id="namaPemesan"
-          placeholder="Masukkan nama Anda"
-          required
-        />
-      </div>
-
-      <!-- No HP -->
-      <div class="form-group">
-        <label for="hpPemesan">No HP</label>
-        <input
-          type="tel"
-          id="hpPemesan"
-          placeholder="Masukkan nomor HP"
-          required
-        />
-      </div>
-
-      <!-- Durasi -->
-      <div class="form-group">
-        <label>Durasi Bermain</label>
-        <div class="durasi-options" id="durasiOptions">
-          <button type="button" class="durasi-btn" data-durasi="1">1 Jam</button>
-          <button type="button" class="durasi-btn active" data-durasi="2">2 Jam</button>
-          <button type="button" class="durasi-btn" data-durasi="3">3 Jam</button>
-        </div>
-      </div>
-
-      <!-- Summary -->
-      <div class="booking-summary" id="bookingSummary">
-        <div class="summary-row">
-          <span>Meja</span>
-          <span id="summaryMeja">-</span>
-        </div>
-        <div class="summary-row">
-          <span>Durasi</span>
-          <span id="summaryDurasi">2 Jam</span>
-        </div>
-        <div class="summary-row">
-          <span>Harga / Jam</span>
-          <span id="summaryHarga">Rp 30.000</span>
-        </div>
-        <div class="summary-row total">
-          <span>Total</span>
-          <span id="summaryTotal">Rp 60.000</span>
-        </div>
-      </div>
-
-      <button type="submit" class="btn-booking-submit">✅ Pesan Sekarang</button>
-    </form>
-  </div>
-</div>
-
-
-<!-- ======================================== -->
-<!-- MODAL LOGIN ADMIN                         -->
-<!-- ======================================== -->
-<div class="modal-login" id="modalLogin">
-  <div class="login-content">
-    <h2>🔐 Admin Login</h2>
-    <p class="subtitle">Masukkan kredensial untuk mengelola meja</p>
-    
-    <form id="loginForm">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Masukkan username" required />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Masukkan password" required />
-      </div>
-      <div class="login-error" id="loginError">❌ Username atau password salah!</div>
-      <button type="submit" class="btn-login">🔑 Login</button>
-    </form>
-    
-    <!-- TAMBAHKAN INI - Link Register -->
-    <div class="register-link">
-      Belum punya akun? <a id="goToRegister">📝 Register di sini</a>
-    </div>
-  </div>
-</div>
-
-<!-- ======================================== -->
-<!-- MODAL REGISTER ADMIN                      -->
-<!-- ======================================== -->
-<div class="modal-register" id="modalRegister">
-  <div class="register-content">
-    <!-- Form Register -->
-    <div id="registerFormContainer">
-      <h2>📝 Daftar Akun Admin</h2>
-      <p class="subtitle">Isi data berikut untuk mendaftar</p>
-      
-      <form id="registerForm">
-        <div class="form-group">
-          <label for="regNama">Nama Lengkap</label>
-          <input type="text" id="regNama" placeholder="Masukkan nama lengkap" required />
-        </div>
-        
-        <div class="form-group">
-          <label for="regEmail">Email</label>
-          <input type="email" id="regEmail" placeholder="Masukkan email" required />
-        </div>
-        
-        <div class="form-group">
-          <label for="regUsername">Username</label>
-          <input type="text" id="regUsername" placeholder="Pilih username" required />
-          <div class="error-message" id="usernameError">Username sudah digunakan!</div>
-        </div>
-        
-        <div class="form-group">
-          <label for="regPassword">Password</label>
-          <input type="password" id="regPassword" placeholder="Buat password (min 6 karakter)" required />
-          <div class="password-strength">
-            <div class="strength-bar" id="strengthBar"></div>
-          </div>
-          <div class="strength-text" id="strengthText">Kekuatan password: -</div>
-        </div>
-        
-        <div class="form-group">
-          <label for="regConfirmPassword">Konfirmasi Password</label>
-          <input type="password" id="regConfirmPassword" placeholder="Ulangi password" required />
-          <div class="error-message" id="passwordMatchError">Password tidak cocok!</div>
-        </div>
-        
-        <button type="submit" class="btn-register">📝 Daftar</button>
-        <button type="button" class="btn-back-login" id="backToLogin">🔙 Kembali ke Login</button>
-      </form>
-    </div>
-    
-    <!-- Success Message (sembunyiin dulu) -->
-    <div class="register-success" id="registerSuccess">
-      <span class="success-icon">✅</span>
-      <h3>Pendaftaran Berhasil!</h3>
-      <p>Akun admin telah dibuat. Silakan login dengan username dan password Anda.</p>
-      <button class="btn-login" id="goToLoginAfterRegister">🔑 Login Sekarang</button>
-    </div>
-  </div>
-</div>
-
-<!-- ======================================== -->
-<!-- DASHBOARD ADMIN                           -->
-<!-- ======================================== -->
-<section class="dashboard-admin" id="dashboardAdmin">
-  <div class="dashboard-header">
-    <h2>📊 Manajemen Meja Billiard</h2>
-    <div class="admin-info">
-      <span>👋 Hallo, <strong id="adminName">Admin</strong>!</span>
-      <button class="btn-logout" id="btnLogout">🚪 Logout</button>
-    </div>
-  </div>
-
-  <!-- Stats -->
-  <div class="dashboard-stats" id="dashboardStats">
-    <div class="stat-box blue">
-      <span class="number" id="dashTotal">5</span>
-      <span class="label">Total Meja</span>
-    </div>
-    <div class="stat-box green">
-      <span class="number" id="dashAvailable">0</span>
-      <span class="label">Tersedia</span>
-    </div>
-    <div class="stat-box red">
-      <span class="number" id="dashOccupied">0</span>
-      <span class="label">Terpakai</span>
-    </div>
-    <div class="stat-box yellow">
-      <span class="number" id="dashBooked">0</span>
-      <span class="label">Dipesan</span>
-    </div>
-  </div>
-
-  <!-- Tabel Booking -->
-  <div class="dashboard-table">
-    <h3>📋 Daftar Booking</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Meja</th>
-          <th>Pemain</th>
-          <th>Durasi</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody id="bookingTableBody">
-        <!-- Diisi oleh JS -->
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Update Status -->
-  <div class="status-update-section">
-    <h3>🎱 Update Status Meja</h3>
-    <div class="status-update-grid" id="statusUpdateGrid">
-      <!-- Diisi oleh JS -->
-    </div>
-    <button class="btn-save-status" id="btnSaveStatus">💾 Simpan Perubahan</button>
-  </div>
-</section>
-
   <body>
-    <!-- Navbar start -->
+    <!-- ======================================== -->
+    <!-- MODAL BOOKING MEJA                        -->
+    <!-- ======================================== -->
+    <div class="modal-booking" id="modalBooking">
+      <div class="modal-content">
+        <button class="close-modal" id="closeModal">&times;</button>
+        <h2>📋 Booking Meja</h2>
+        <p class="subtitle">Pilih meja dan isi data untuk memesan</p>
+        <form class="booking-form" id="bookingForm">
+          <div class="form-group">
+            <label for="pilihMeja">Pilih Meja</label>
+            <select id="pilihMeja" required>
+              <option value="">-- Pilih Meja --</option>
+              <option value="1">Meja 1 - Rp 30.000/jam</option>
+              <option value="2">Meja 2 - Rp 30.000/jam</option>
+              <option value="3">Meja 3 - Rp 30.000/jam</option>
+              <option value="4">Meja 4 - Rp 35.000/jam</option>
+              <option value="5">Meja 5 - Rp 35.000/jam</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="namaPemesan">Nama Lengkap</label>
+            <input
+              type="text"
+              id="namaPemesan"
+              placeholder="Masukkan nama Anda"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="hpPemesan">No HP</label>
+            <input
+              type="tel"
+              id="hpPemesan"
+              placeholder="Masukkan nomor HP"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Durasi Bermain</label>
+            <div class="durasi-options" id="durasiOptions">
+              <button type="button" class="durasi-btn" data-durasi="1">
+                1 Jam
+              </button>
+              <button type="button" class="durasi-btn active" data-durasi="2">
+                2 Jam
+              </button>
+              <button type="button" class="durasi-btn" data-durasi="3">
+                3 Jam
+              </button>
+            </div>
+          </div>
+          <div class="booking-summary" id="bookingSummary">
+            <div class="summary-row">
+              <span>Meja</span><span id="summaryMeja">-</span>
+            </div>
+            <div class="summary-row">
+              <span>Durasi</span><span id="summaryDurasi">2 Jam</span>
+            </div>
+            <div class="summary-row">
+              <span>Harga / Jam</span><span id="summaryHarga">Rp 30.000</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span><span id="summaryTotal">Rp 60.000</span>
+            </div>
+          </div>
+          <button type="submit" class="btn-booking-submit">
+            ✅ Pesan Sekarang
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- MODAL LOGIN ADMIN                         -->
+    <!-- ======================================== -->
+    <div class="modal-login" id="modalLogin">
+      <div class="login-content">
+        <h2>🔐 Admin Login</h2>
+        <p class="subtitle">Masukkan kredensial untuk mengelola meja</p>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Masukkan username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Masukkan password"
+              required
+            />
+          </div>
+          <div class="login-error" id="loginError">
+            ❌ Username atau password salah!
+          </div>
+          <button type="submit" class="btn-login">🔑 Login</button>
+        </form>
+        <div class="register-link">
+          Belum punya akun? <a id="goToRegister">📝 Register di sini</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- MODAL REGISTER ADMIN                      -->
+    <!-- ======================================== -->
+    <div class="modal-register" id="modalRegister">
+      <div class="register-content">
+        <div id="registerFormContainer">
+          <h2>📝 Daftar Akun Admin</h2>
+          <p class="subtitle">Isi data berikut untuk mendaftar</p>
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="regNama">Nama Lengkap</label>
+              <input
+                type="text"
+                id="regNama"
+                placeholder="Masukkan nama lengkap"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="regEmail">Email</label>
+              <input
+                type="email"
+                id="regEmail"
+                placeholder="Masukkan email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="regUsername">Username</label>
+              <input
+                type="text"
+                id="regUsername"
+                placeholder="Pilih username"
+                required
+              />
+              <div class="error-message" id="usernameError">
+                Username sudah digunakan!
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="regPassword">Password</label>
+              <input
+                type="password"
+                id="regPassword"
+                placeholder="Buat password (min 6 karakter)"
+                required
+              />
+              <div class="password-strength">
+                <div class="strength-bar" id="strengthBar"></div>
+              </div>
+              <div class="strength-text" id="strengthText">
+                Kekuatan password: -
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="regConfirmPassword">Konfirmasi Password</label>
+              <input
+                type="password"
+                id="regConfirmPassword"
+                placeholder="Ulangi password"
+                required
+              />
+              <div class="error-message" id="passwordMatchError">
+                Password tidak cocok!
+              </div>
+            </div>
+            <button type="submit" class="btn-register">📝 Daftar</button>
+            <button type="button" class="btn-back-login" id="backToLogin">
+              🔙 Kembali ke Login
+            </button>
+          </form>
+        </div>
+        <div class="register-success" id="registerSuccess">
+          <span class="success-icon">✅</span>
+          <h3>Pendaftaran Berhasil!</h3>
+          <p>
+            Akun admin telah dibuat. Silakan login dengan username dan password
+            Anda.
+          </p>
+          <button class="btn-login" id="goToLoginAfterRegister">
+            🔑 Login Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- DASHBOARD ADMIN                           -->
+    <!-- ======================================== -->
+    <section class="dashboard-admin" id="dashboardAdmin">
+      <div class="dashboard-header">
+        <h2>📊 Manajemen Meja Billiard</h2>
+        <div class="admin-info">
+          <span>👋 Hallo, <strong id="adminName">Admin</strong>!</span>
+          <button class="btn-logout" id="btnLogout">🚪 Logout</button>
+        </div>
+      </div>
+      <div class="dashboard-stats" id="dashboardStats">
+        <div class="stat-box blue">
+          <span class="number" id="dashTotal">5</span
+          ><span class="label">Total Meja</span>
+        </div>
+        <div class="stat-box green">
+          <span class="number" id="dashAvailable">0</span
+          ><span class="label">Tersedia</span>
+        </div>
+        <div class="stat-box red">
+          <span class="number" id="dashOccupied">0</span
+          ><span class="label">Terpakai</span>
+        </div>
+        <div class="stat-box yellow">
+          <span class="number" id="dashBooked">0</span
+          ><span class="label">Dipesan</span>
+        </div>
+      </div>
+      <div class="dashboard-table">
+        <h3>📋 Daftar Booking</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Meja</th>
+              <th>Pemain</th>
+              <th>Durasi</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="bookingTableBody"></tbody>
+        </table>
+      </div>
+      <div class="status-update-section">
+        <h3>🎱 Update Status Meja</h3>
+        <div class="status-update-grid" id="statusUpdateGrid"></div>
+        <button class="btn-save-status" id="btnSaveStatus">
+          💾 Simpan Perubahan
+        </button>
+      </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- NAVBAR                                    -->
+    <!-- ======================================== -->
     <nav class="navbar">
-  <a href="#" class="navbar-logo">
-    <span>Infinity</span><span style="color: white;">Billiard</span>.
-  </a>
-
-
+      <a href="#" class="navbar-logo">
+        <span>Infinity</span><span style="color: white">Billiard</span>.
+      </a>
       <div class="navbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">Tentang Kami</a>
-        <a href="#status-meja">Status Meja</a>
-        <a href="#contact">Kontak</a>
+        <a href="#" onclick="showPage('home')" class="active-link">Home</a>
+        <a href="#" onclick="showPage('about')">Tentang Kami</a>
+        <a href="#" onclick="showPage('status')">Status Meja</a>
+        <a href="#" onclick="showPage('contact')">Kontak</a>
         <a href="#" id="adminLink" class="admin-link">🔐 Admin</a>
       </div>
-
       <div class="navbar-extra">
-        <a href="#" id="search"><i data-feather="search"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
-
-      
     </nav>
-    <!-- Navbar end -->
 
-    <!-- Hero section start -->
-    <section class="hero" id="home">
+    <!-- ======================================== -->
+    <!-- HALAMAN HOME (Hero)                       -->
+    <!-- ======================================== -->
+    <section class="hero page active" id="home" data-page="home">
       <main class="content">
-        <h1>Rasakan Meja Kelas <span>International</h1>
+        <h1>Rasakan Meja Kelas <span>International</span></h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
           veritatis.
         </p>
-        <a href="#" class="cta">Booking Sekarang!</a>
+        <a
+          href="#"
+          class="cta"
+          onclick="
+            openBookingModal();
+            return false;
+          "
+          >Booking Sekarang!</a
+        >
       </main>
     </section>
-    <!-- Hero section end -->
 
-    <!-- About Section start -->
-     <section id="about" class="about">
+    <!-- ======================================== -->
+    <!-- HALAMAN ABOUT                             -->
+    <!-- ======================================== -->
+    <section
+      id="about"
+      class="about page"
+      data-page="about"
+      style="display: none"
+    >
       <h2><span>Tentang</span> Kami</h2>
-
       <div class="row">
         <div class="about-img">
-          <img src="img/tentang-kami.jpg" alt="Tentang Kami">
+          <img src="img/tentang-kami.jpg" alt="Tentang Kami" />
         </div>
         <div class="content">
           <h3>Kenapa harus Infinity?</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima, dignissimos. Rem doloremque ullam assumenda minus!</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur veniam culpa, eveniet ab dolor est exercitationem libero consequatur tempora.</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima,
+            dignissimos. Rem doloremque ullam assumenda minus!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            consectetur veniam culpa, eveniet ab dolor est exercitationem libero
+            consequatur tempora.
+          </p>
         </div>
       </div>
-     </section>
-    <!-- About Section end -->
+    </section>
 
-<!-- ======================================== -->
-<!-- STATUS MEJA BILLIARD - SIMPLE VERSION    -->
-<!-- ======================================== -->
-
-
-<!-- ===== STATUS MEJA SECTION ===== -->
-<section id="status-meja" class="status-meja-section">
-    <!-- Header -->
-    <div class="status-header">
+    <!-- ======================================== -->
+    <!-- HALAMAN STATUS MEJA                       -->
+    <!-- ======================================== -->
+    <section
+      id="status-meja"
+      class="status-meja-section page"
+      data-page="status"
+      style="display: none"
+    >
+      <div class="status-header">
         <div class="status-title">
-            <span class="title-icon">🎱</span>
-            <h2>Status Meja Billiard</h2>
+          <span class="title-icon">🎱</span>
+          <h2>Status Meja Billiard</h2>
         </div>
         <div class="status-time">
-            <span class="time-icon">🕐</span>
-            <span class="time-text" id="currentTime">--:--</span>
+          <span class="time-icon">🕐</span>
+          <span class="time-text" id="currentTime">--:--</span>
         </div>
-    </div>
+      </div>
 
-    <!-- Stats Ringkas -->
-    <div class="status-stats">
+      <div class="status-stats">
         <div class="stat-card">
-            <span class="stat-number" id="totalTables">5</span>
-            <span class="stat-label">Total</span>
+          <span class="stat-number" id="totalTables">5</span
+          ><span class="stat-label">Total</span>
         </div>
         <div class="stat-card available">
-            <span class="stat-number" id="availableTables">3</span>
-            <span class="stat-label">Tersedia</span>
+          <span class="stat-number" id="availableTables">3</span
+          ><span class="stat-label">Tersedia</span>
         </div>
         <div class="stat-card occupied">
-            <span class="stat-number" id="occupiedTables">2</span>
-            <span class="stat-label">Terisi</span>
+          <span class="stat-number" id="occupiedTables">2</span
+          ><span class="stat-label">Terisi</span>
         </div>
-    </div>
+      </div>
 
-    <!-- Grid Meja - TANPA TOMBOL PESAN -->
-    <div class="table-grid" id="tableGrid">
-        <!-- Meja 1 - Available -->
+      <div class="table-grid" id="tableGrid">
         <div class="table-card available" data-meja="1">
-            <div class="meja-icon">🎱</div>
-            <div class="meja-nama">Meja 1</div>
-            <div class="meja-status">
-                <span class="status-badge available-badge">✅ Tersedia</span>
-            </div>
-            <div class="meja-harga">Rp 30.000/jam</div>
-            <!-- TOMBOL PESAN DIHAPUS -->
+          <div class="meja-icon">🎱</div>
+          <div class="meja-nama">Meja 1</div>
+          <div class="meja-status">
+            <span class="status-badge available-badge">✅ Tersedia</span>
+          </div>
+          <div class="meja-harga">Rp 30.000/jam</div>
         </div>
-
-        <!-- Meja 2 - Available -->
         <div class="table-card available" data-meja="2">
-            <div class="meja-icon">🎱</div>
-            <div class="meja-nama">Meja 2</div>
-            <div class="meja-status">
-                <span class="status-badge available-badge">✅ Tersedia</span>
-            </div>
-            <div class="meja-harga">Rp 30.000/jam</div>
-            <!-- TOMBOL PESAN DIHAPUS -->
+          <div class="meja-icon">🎱</div>
+          <div class="meja-nama">Meja 2</div>
+          <div class="meja-status">
+            <span class="status-badge available-badge">✅ Tersedia</span>
+          </div>
+          <div class="meja-harga">Rp 30.000/jam</div>
         </div>
-
-        <!-- Meja 3 - Available -->
         <div class="table-card available" data-meja="3">
-            <div class="meja-icon">🎱</div>
-            <div class="meja-nama">Meja 3</div>
-            <div class="meja-status">
-                <span class="status-badge available-badge">✅ Tersedia</span>
-            </div>
-            <div class="meja-harga">Rp 30.000/jam</div>
-            <!-- TOMBOL PESAN DIHAPUS -->
+          <div class="meja-icon">🎱</div>
+          <div class="meja-nama">Meja 3</div>
+          <div class="meja-status">
+            <span class="status-badge available-badge">✅ Tersedia</span>
+          </div>
+          <div class="meja-harga">Rp 30.000/jam</div>
         </div>
-
-        <!-- Meja 4 - Booked -->
         <div class="table-card booked" data-meja="4">
-            <div class="meja-icon">🎱</div>
-            <div class="meja-nama">Meja 4</div>
-            <div class="meja-status">
-                <span class="status-badge booked-badge">🟡 Dipesan</span>
-            </div>
-            <div class="meja-harga">Rp 35.000/jam</div>
-            <div class="meja-jam">⏰ 14:30</div>
-            <div class="meja-pemain">👤 Andi</div>
+          <div class="meja-icon">🎱</div>
+          <div class="meja-nama">Meja 4</div>
+          <div class="meja-status">
+            <span class="status-badge booked-badge">🟡 Dipesan</span>
+          </div>
+          <div class="meja-harga">Rp 35.000/jam</div>
+          <div class="meja-jam">⏰ 14:30</div>
+          <div class="meja-pemain">👤 Andi</div>
         </div>
-
-        <!-- Meja 5 - Available -->
         <div class="table-card available" data-meja="5">
-            <div class="meja-icon">🎱</div>
-            <div class="meja-nama">Meja 5</div>
-            <div class="meja-status">
-                <span class="status-badge available-badge">✅ Tersedia</span>
-            </div>
-            <div class="meja-harga">Rp 35.000/jam</div>
-            <!-- TOMBOL PESAN DIHAPUS -->
+          <div class="meja-icon">🎱</div>
+          <div class="meja-nama">Meja 5</div>
+          <div class="meja-status">
+            <span class="status-badge available-badge">✅ Tersedia</span>
+          </div>
+          <div class="meja-harga">Rp 35.000/jam</div>
         </div>
-    </div>
+      </div>
 
-   <!-- Legend -->
-<!-- Legend - Versi Simple -->
-<div class="table-legend">
-    <span class="legend-item">
-        <span style="color: #4CAF50; font-size: 20px;">●</span>
-        Tersedia
-    </span>
-    <span class="legend-item">
-        <span style="color: #F44336; font-size: 20px;">●</span>
-        Terpakai
-    </span>
-    <span class="legend-item">
-        <span style="color: #FFC107; font-size: 20px;">●</span>
-        Dipesan
-    </span>
-</div>
+      <div class="table-legend">
+        <span class="legend-item"
+          ><span style="color: #4caf50; font-size: 20px">●</span> Tersedia</span
+        >
+        <span class="legend-item"
+          ><span style="color: #f44336; font-size: 20px">●</span> Terpakai</span
+        >
+        <span class="legend-item"
+          ><span style="color: #ffc107; font-size: 20px">●</span> Dipesan</span
+        >
+      </div>
 
-    <!-- Info Booking -->
-<div class="booking-info">
-    <div class="info-card">
-        <div class="info-icon-wrapper">
-            <span class="info-icon">📋</span>
-        </div>
-        <div class="info-content">
+      <div class="booking-info">
+        <div class="info-card">
+          <div class="info-icon-wrapper"><span class="info-icon">📋</span></div>
+          <div class="info-content">
             <h4>Ingin Booking Meja?</h4>
-            <p>Silahkan klik tombol <strong>"Booking Sekarang!"</strong> di halaman 
-                <a href="index.html" class="info-link">Home</a> untuk melakukan pemesanan.
+            <p>
+              Silahkan klik tombol <strong>"Booking Sekarang!"</strong> di
+              halaman
+              <a
+                href="#"
+                class="info-link"
+                onclick="
+                  showPage('home');
+                  return false;
+                "
+                >Home</a
+              >
+              untuk melakukan pemesanan.
             </p>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-    <!-- Tombol Refresh -->
-<div class="status-action">
-    <button class="btn-refresh" onclick="refreshStatus()">
-        <span class="refresh-icon">🔄</span>
-        Refresh Status
-    </button>
-</div>
-<!-- ===== STATUS MEJA SECTION END ===== -->
+      <div class="status-action">
+        <button class="btn-refresh" onclick="refreshStatus()">
+          <span class="refresh-icon">🔄</span> Refresh Status
+        </button>
+      </div>
+    </section>
 
+    <!-- ======================================== -->
+    <!-- HALAMAN KONTAK                           -->
+    <!-- ======================================== -->
+    <section
+      id="contact"
+      class="contact page"
+      data-page="contact"
+      style="display: none"
+    >
+      <h2><span>Kontak</span> Kami</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, expedita!
+      </p>
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.0565228654136!2d114.30317707450251!3d-8.2971741834596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd151ff9e56b179%3A0x7e1a811c1b461174!2sInfinity%20billiard!5e0!3m2!1sid!2sid!4v1781856515490!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+        <form action="">
+          <div class="input-group">
+            <i data-feather="user"></i>
+            <input type="text" placeholder="nama" />
+          </div>
+          <div class="input-group">
+            <i data-feather="mail"></i>
+            <input type="text" placeholder="email" />
+          </div>
+          <div class="input-group">
+            <i data-feather="phone"></i>
+            <input type="text" placeholder="no hp" />
+          </div>
+          <button type="submit" class="btn">kirim pesan</button>
+        </form>
+      </div>
+    </section>
 
-<!-- Contact Section start -->
-<section id="contact" class="contact">
-  <h2><span>Kontak</span> Kami</h2>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, expedita!</p>
-
-<div class="row">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.0565228654136!2d114.30317707450251!3d-8.2971741834596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd151ff9e56b179%3A0x7e1a811c1b461174!2sInfinity%20billiard!5e0!3m2!1sid!2sid!4v1781856515490!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map" style="height: 665px;"></iframe>
-
-<form action="">
-  <div class="input-group">
-    <i data-feather="user"></i>
-    <input type="text" placeholder="nama">
-  </div>
-  <div class="input-group">
-    <i data-feather="mail"></i>
-    <input type="text" placeholder="email">
-  </div>
-  <div class="input-group">
-    <i data-feather="phone"></i>
-    <input type="text" placeholder="no hp">
-  </div>
-  <button type="submit" class="btn">kirim pesan</button>
-</form>
-
-</div>
-</section>
-<!-- Contact Section end -->
-
-<!-- Footer start -->
- <footer>
-  <div class="socials">
-    <a href="#"><i data-feather="instagram"></i></a>
-    <a href="#"><i data-feather="twitter"></i></a>
-    <a href="#"><i data-feather="facebook"></i></a>
-  </div>
-
-  <div class="links">
-    <a href="#home">Home</a>
-    <a href="#about">Tentang Kami</a>
-    <a href="#status-meja">Status Meja</a>
-    <a href="#contact">Kontak</a>
-  </div>
-
-  <div class="credit">
-    <p>Created by <a href="">aldy firmansyah</a>. | &copy; 2026.</p>
-  </div>
- </footer>
-<!-- Footer end -->
-
+    <!-- ======================================== -->
+    <!-- FOOTER                                   -->
+    <!-- ======================================== -->
+    <footer>
+      <div class="socials">
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="#"><i data-feather="twitter"></i></a>
+        <a href="#"><i data-feather="facebook"></i></a>
+      </div>
+      <div class="links">
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('about')">Tentang Kami</a>
+        <a href="#" onclick="showPage('status')">Status Meja</a>
+        <a href="#" onclick="showPage('contact')">Kontak</a>
+      </div>
+      <div class="credit">
+        <p>Created by <a href="">aldy firmansyah</a>. | &copy; 2026.</p>
+      </div>
+    </footer>
 
     <!-- Feather Icons -->
     <script>
