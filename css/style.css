@@ -1726,10 +1726,22 @@ footer .credit a {
   padding-top: 10;
 }
 
+/* ========================================
+   RESPONSIVE MOBILE - TAMBAHKAN DI SINI
+   ======================================== */
+
 /* Tablet */
-@media (max-width: 758px) {
+@media (max-width: 768px) {
   html {
     font-size: 62.5%;
+  }
+
+  .navbar {
+    padding: 1rem 5%;
+  }
+
+  .navbar .navbar-logo {
+    font-size: 1.6rem;
   }
 
   #hamburger-menu {
@@ -1740,10 +1752,12 @@ footer .credit a {
     position: absolute;
     top: 100%;
     right: -100%;
-    background-color: #fff;
-    width: 30rem;
+    background-color: #010101;
+    width: 28rem;
     height: 100vh;
     transition: 0.3s;
+    padding: 1rem 0;
+    border-left: 1px solid rgba(212, 175, 55, 0.3);
   }
 
   .navbar .navbar-nav.active {
@@ -1751,11 +1765,12 @@ footer .credit a {
   }
 
   .navbar .navbar-nav a {
-    color: var(--bg);
+    color: #fff;
     display: block;
-    margin: 1.5rem;
+    margin: 1.2rem 2rem;
     padding: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .navbar .navbar-nav a::after {
@@ -1766,16 +1781,203 @@ footer .credit a {
     transform: scaleX(0.2);
   }
 
+  .hero {
+    min-height: 60vh;
+    background-attachment: scroll;
+  }
+
+  .hero .content {
+    padding: 1rem 5%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero .content h1 {
+    font-size: 3rem;
+  }
+
+  .hero .content p {
+    font-size: 1rem;
+  }
+
+  .hero .content .cta {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    display: inline-block;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .about {
+    padding: 60px 15px;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about .row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-img {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .about .content {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .content h3 {
+    font-size: 1.6rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+  }
+
+  .status-meja-section {
+    padding: 40px 5% 20px;
+  }
+
+  .status-title h2 {
+    font-size: 1.4rem;
+  }
+
+  .status-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .status-stats {
+    gap: 8px;
+  }
+
+  .stat-card .stat-number {
+    font-size: 20px;
+  }
+
+  .stat-card {
+    padding: 10px;
+  }
+
+  .table-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .table-card {
+    min-height: 120px;
+    padding: 12px 8px;
+  }
+
+  .meja-icon {
+    font-size: 24px;
+  }
+
+  .meja-nama {
+    font-size: 13px;
+  }
+
+  .contact {
+    padding: 6rem 5% 1.4rem;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
   .contact .row {
+    flex-direction: column;
     flex-wrap: wrap;
   }
 
   .contact .row .map {
-    height: 30rem;
+    height: 250px;
+    width: 100%;
+    flex: none;
   }
 
   .contact .row form {
-    padding-top: 0;
+    padding: 2rem 1.5rem;
+    width: 100%;
+    flex: none;
+  }
+
+  .contact .row form .input-group input {
+    padding: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .contact .row form .btn {
+    font-size: 1.4rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .stat-box .number {
+    font-size: 2rem;
+  }
+
+  .dashboard-table {
+    font-size: 0.8rem;
+    padding: 12px;
+    overflow-x: auto;
+  }
+
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 6px 8px;
+  }
+
+  .modal-content,
+  .login-content,
+  .register-content {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .modal-content h2,
+  .login-content h2,
+  .register-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .booking-form input,
+  .booking-form select,
+  .login-content input,
+  .register-content input {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .durasi-options .durasi-btn {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  footer .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  footer .links a {
+    padding: 0.5rem 0.8rem;
+    font-size: 1.2rem;
   }
 }
 
