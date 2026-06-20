@@ -1,0 +1,1787 @@
+:root {
+  --primary: #d4af37;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #d4af37;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a :hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.1;
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* About Section buatan */
+
+.about {
+  padding: 80px 20px;
+  background-color: var(--bg);
+}
+
+.row {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* GAMBAR - Ini yang mengatur ukuran */
+.about-img {
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+/* TEKS */
+.content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.content h3 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* Gambar di atas, teks di bawah */
+    gap: 30px;
+  }
+
+  .about-img,
+  .content {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========================================
+   STATUS MEJA BILLIARD - SIMPLE
+   ======================================== */
+
+.status-meja-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 7% 30px;
+  background: var(--bg);
+  color: #fff;
+}
+
+/* Header */
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  margin-bottom: 20px;
+}
+
+.status-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title-icon {
+  font-size: 28px;
+}
+
+.status-title h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.status-time {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Stats */
+.status-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-card .stat-number {
+  font-size: 30px;
+  font-weight: 800;
+  display: block;
+}
+
+.stat-card .stat-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.stat-card.available .stat-number {
+  color: #4caf50;
+}
+
+.stat-card.occupied .stat-number {
+  color: #f44336;
+}
+
+/* Grid Meja */
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* Card Meja */
+.table-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.table-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Status Card */
+.table-card.available {
+  border-color: #4caf50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.table-card.available:hover {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+.table-card.occupied {
+  border-color: #f44336;
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.table-card.occupied:hover {
+  background: rgba(244, 67, 54, 0.2);
+}
+
+.table-card.booked {
+  border-color: #ffc107;
+  background: rgba(255, 193, 7, 0.1);
+}
+
+.table-card.booked:hover {
+  background: rgba(255, 193, 7, 0.2);
+}
+
+/* Elemen dalam card */
+.meja-icon {
+  font-size: 30px;
+  margin-bottom: 4px;
+}
+
+.meja-nama {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.meja-status {
+  margin: 4px 0;
+}
+
+.status-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 12px;
+  border-radius: 12px;
+}
+
+.available-badge {
+  color: #4caf50;
+}
+
+.occupied-badge {
+  color: #f44336;
+}
+
+.booked-badge {
+  color: #ffc107;
+}
+
+.meja-harga {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.meja-timer {
+  font-size: 14px;
+  color: #f44336;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+}
+
+.meja-jam {
+  font-size: 13px;
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.meja-pemain {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ========================================
+   BOOKING INFO CARD - V2
+   ======================================== */
+.booking-info {
+  margin: 24px 0 30px;
+}
+
+.info-card {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.08),
+    rgba(212, 175, 55, 0.02)
+  );
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.05);
+  transform: translateY(-2px);
+}
+
+.info-icon-wrapper {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(212, 175, 55, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-icon {
+  font-size: 24px;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-content h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px 0;
+}
+
+.info-content p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.info-content strong {
+  color: var(--primary);
+}
+
+.info-link {
+  color: var(--primary);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.info-link:hover {
+  color: #c49b2f;
+}
+
+/* Status Action - Beri jarak dengan info */
+.status-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.btn-refresh {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 32px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-refresh:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.btn-refresh:active {
+  transform: scale(0.97);
+}
+
+.btn-refresh .refresh-icon {
+  font-size: 16px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 500px) {
+  .btn-refresh {
+    padding: 10px 24px;
+    font-size: 13px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* Mobile */
+@media (max-width: 500px) {
+  .table-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .table-card {
+    min-height: 120px;
+    padding: 12px 8px;
+  }
+
+  .meja-icon {
+    font-size: 24px;
+  }
+
+  .meja-nama {
+    font-size: 13px;
+  }
+
+  .status-stats {
+    gap: 8px;
+  }
+
+  .stat-card .stat-number {
+    font-size: 20px;
+  }
+
+  .stat-card {
+    padding: 10px;
+  }
+
+  .status-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .status-title h2 {
+    font-size: 1.2rem;
+  }
+
+  .table-legend {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    font-size: 11px;
+  }
+}
+
+/* ===== ANIMASI ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-card {
+  animation: fadeIn 0.4s ease forwards;
+  opacity: 0;
+}
+
+.table-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.table-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.table-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.table-card:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.table-card:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+/* Pulse untuk meja tersedia */
+.table-card.available .btn-pesan {
+  animation: pulseBtn 2s ease-in-out infinite;
+}
+
+@keyframes pulseBtn {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Toast Notification */
+.toast-notification {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 1000;
+  animation: toastIn 0.4s ease;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.toast-success {
+  background: #4caf50;
+  color: white;
+}
+
+.toast-error {
+  background: #f44336;
+  color: white;
+}
+
+.toast-warning {
+  background: #ffc107;
+  color: #1a1a2e;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ========================================
+   STATUS MEJA BILLIARD - SIMPLE
+   ======================================== */
+
+/* About Section Asli */
+.about,
+.contact {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.contact h2 span {
+  color: var(--primary);
+}
+
+/* contact section */
+
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #222;
+  gap: 0;
+  border-radius: 8px;
+}
+
+.contact .row .map {
+  flex: 1 1 50%;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: none;
+  border-radius: 8px;
+}
+
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.contact .row form {
+  flex: 1 1 50%;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0 2rem;
+  margin-top: 3rem;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: var(--bg);
+}
+
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* ========================================
+   BOOKING MODAL & FORM
+   ======================================== */
+
+/* Modal Background */
+.modal-booking {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInModal 0.3s ease;
+}
+
+.modal-booking.active {
+  display: flex;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  background: #1a1a2e;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-content .close-modal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: 0.3s;
+  background: none;
+  border: none;
+}
+
+.modal-content .close-modal:hover {
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.modal-content h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.modal-content .subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Booking */
+.booking-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.booking-form label {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.booking-form input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.booking-form select option {
+  background: #1a1a2e;
+  color: #fff;
+}
+
+/* Durasi Buttons */
+.durasi-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.durasi-options .durasi-btn {
+  flex: 1;
+  min-width: 70px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.durasi-options .durasi-btn:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  color: #fff;
+}
+
+.durasi-options .durasi-btn.active {
+  border-color: var(--primary);
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--primary);
+}
+
+/* Summary */
+.booking-summary {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 1rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.booking-summary .summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.booking-summary .summary-row.total {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+  margin-top: 4px;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* Submit Button */
+.btn-booking-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Poppins", sans-serif;
+  margin-top: 0.5rem;
+}
+
+.btn-booking-submit:hover {
+  background: #c49b2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-booking-submit:active {
+  transform: scale(0.97);
+}
+
+/* Meja yang dipilih di modal */
+.selected-meja-display {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.selected-meja-display span {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Responsive Modal */
+@media (max-width: 500px) {
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .durasi-options .durasi-btn {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+
+  .booking-form input,
+  .booking-form select {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========================================
+   LOGIN ADMIN & DASHBOARD
+   ======================================== */
+
+/* Login Modal */
+.modal-login {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 10001;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInModal 0.3s ease;
+}
+
+.modal-login.active {
+  display: flex;
+}
+
+.login-content {
+  background: #1a1a2e;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 400px;
+  width: 90%;
+}
+
+.login-content h2 {
+  color: var(--primary);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-content .subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-content .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.login-content label {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.login-content input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s;
+}
+
+.login-content input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Poppins", sans-serif;
+  margin-top: 0.5rem;
+}
+
+.btn-login:hover {
+  background: #c49b2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.login-error {
+  color: #f44336;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
+
+/* ========================================
+   DASHBOARD ADMIN
+   ======================================== */
+.dashboard-admin {
+  display: none;
+  padding: 8rem 7% 2rem;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.dashboard-admin.active {
+  display: block;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-header h2 {
+  color: var(--primary);
+  font-size: 2rem;
+}
+
+.dashboard-header .admin-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashboard-header .admin-info span {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-logout {
+  padding: 8px 20px;
+  background: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s;
+}
+
+.btn-logout:hover {
+  background: #d32f2f;
+  transform: scale(1.05);
+}
+
+/* Dashboard Stats */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stat-box .number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  display: block;
+}
+
+.stat-box .label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.stat-box.green .number {
+  color: #4caf50;
+}
+.stat-box.red .number {
+  color: #f44336;
+}
+.stat-box.yellow .number {
+  color: #ffc107;
+}
+.stat-box.blue .number {
+  color: #42a5f5;
+}
+
+/* Tabel Booking */
+.dashboard-table {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.dashboard-table h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.dashboard-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.dashboard-table th {
+  text-align: left;
+  padding: 10px 12px;
+  color: var(--primary);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+}
+
+.dashboard-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dashboard-table .status-badge-dash {
+  padding: 2px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.dashboard-table .status-badge-dash.available {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+}
+
+.dashboard-table .status-badge-dash.occupied {
+  background: rgba(244, 67, 54, 0.2);
+  color: #f44336;
+}
+
+.dashboard-table .status-badge-dash.booked {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+/* Update Status Meja */
+.status-update-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.status-update-section h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.status-update-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.status-update-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status-update-item .meja-name {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.status-update-item .status-badge-dash {
+  display: inline-block;
+  width: fit-content;
+}
+
+.status-update-item .btn-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.status-update-item .btn-group button {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s;
+}
+
+.status-update-item .btn-group button:hover {
+  transform: scale(1.05);
+}
+
+.btn-set-available {
+  background: rgba(76, 175, 80, 0.3);
+  color: #4caf50;
+}
+.btn-set-available:hover {
+  background: #4caf50;
+  color: #fff;
+}
+.btn-set-available.active {
+  background: #4caf50;
+  color: #fff;
+}
+
+.btn-set-occupied {
+  background: rgba(244, 67, 54, 0.3);
+  color: #f44336;
+}
+.btn-set-occupied:hover {
+  background: #f44336;
+  color: #fff;
+}
+.btn-set-occupied.active {
+  background: #f44336;
+  color: #fff;
+}
+
+.btn-set-booked {
+  background: rgba(255, 193, 7, 0.3);
+  color: #ffc107;
+}
+.btn-set-booked:hover {
+  background: #ffc107;
+  color: #1a1a2e;
+}
+.btn-set-booked.active {
+  background: #ffc107;
+  color: #1a1a2e;
+}
+
+.btn-save-status {
+  margin-top: 1rem;
+  padding: 12px 32px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s;
+}
+
+.btn-save-status:hover {
+  background: #c49b2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Navbar Admin Link */
+.navbar .navbar-nav a.admin-link {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 4px 14px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.navbar .navbar-nav a.admin-link:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Responsive Dashboard */
+@media (max-width: 768px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .status-update-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-table {
+    font-size: 0.8rem;
+  }
+
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 6px 8px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .stat-box .number {
+    font-size: 1.8rem;
+  }
+
+  .login-content {
+    padding: 1.5rem;
+  }
+}
+
+/* ========================================
+   REGISTER ADMIN - TAMBAHKAN DI PALING BAWAH
+   ======================================== */
+
+/* Register Link di Login */
+.register-link {
+  text-align: center;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.register-link a {
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.register-link a:hover {
+  color: #c49b2f;
+}
+
+/* Register Modal */
+.modal-register {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 10002;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInModal 0.3s ease;
+}
+
+.modal-register.active {
+  display: flex;
+}
+
+.register-content {
+  background: #1a1a2e;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 420px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.register-content h2 {
+  color: var(--primary);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.register-content .subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.register-content .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.register-content label {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.register-content input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s;
+}
+
+.register-content input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.register-content input.error {
+  border-color: #f44336;
+}
+
+.register-content .error-message {
+  color: #f44336;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.register-content .error-message.show {
+  display: block;
+}
+
+.btn-register {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Poppins", sans-serif;
+  margin-top: 0.5rem;
+}
+
+.btn-register:hover {
+  background: #c49b2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-back-login {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Poppins", sans-serif;
+  margin-top: 0.8rem;
+}
+
+.btn-back-login:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.register-success {
+  display: none;
+  text-align: center;
+  padding: 1rem;
+}
+
+.register-success .success-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.register-success h3 {
+  color: #4caf50;
+  margin-bottom: 0.5rem;
+}
+
+.register-success p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Password strength indicator */
+.password-strength {
+  height: 4px;
+  border-radius: 4px;
+  margin-top: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.password-strength .strength-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.password-strength .strength-bar.weak {
+  width: 33%;
+  background: #f44336;
+}
+
+.password-strength .strength-bar.medium {
+  width: 66%;
+  background: #ffc107;
+}
+
+.password-strength .strength-bar.strong {
+  width: 100%;
+  background: #4caf50;
+}
+
+.strength-text {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 2px;
+  text-align: right;
+}
+
+/* Responsive Register */
+@media (max-width: 500px) {
+  .register-content {
+    padding: 1.5rem;
+  }
+
+  .register-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .register-content input {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Media Quries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+.contact .row {
+  flex-wrap: wrap;
+}
+
+.contact .row .map {
+  height: 50rem;
+}
+
+.contact .row form {
+  padding-top: 10;
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
